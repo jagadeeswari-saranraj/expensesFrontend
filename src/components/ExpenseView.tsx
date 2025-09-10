@@ -52,8 +52,10 @@ const ExpenseView = () => {
           ))}
         </Box>
 
-        <Button variant="outlined" onClick={() => navigate('/')}>Back</Button>
-        <Button variant="contained" onClick={() => navigate(`/edit/${id}`)}>Edit</Button>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2, gap: 2 }}>
+          <Button variant="outlined" onClick={() => navigate('/')}>Back</Button>
+          <Button variant="contained" onClick={() => navigate(`/edit/${id}`)}>Edit</Button>
+        </Box>
       </CardContent>
     </Card> : <span>No data in this Id</span>
 
