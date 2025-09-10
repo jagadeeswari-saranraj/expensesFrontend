@@ -95,9 +95,12 @@ const ExpenseForm = () => {
         <TextField label="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
         <TextField type="number" label="Total" value={total} InputProps={{ readOnly: true }} />
         <TextField type="date" label="Date" value={date} onChange={(e) => setDate(e.target.value)} required InputLabelProps={{shrink: true}} />
-        <Typography variant="h6">Categories</Typography>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+          <Typography variant="h6">Categories</Typography>
+          <Button startIcon={<Add />} onClick={addCategory} variant="outlined">Add Category</Button>
+        </Box>
         {Object.entries(byCategory).map(([type, amount], index) => (
-            <Box key={index} sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Box key={index} sx={{ display: 'flex', gap: 1, alignItems: 'center', justifyContent: 'space-between' }}>
             <TextField
                 label="Category Type"
                 value={type}
@@ -116,7 +119,7 @@ const ExpenseForm = () => {
             </IconButton>
             </Box>
         ))}
-        <Button startIcon={<Add />} onClick={addCategory} variant="outlined">Add Category</Button>
+        {/* <Button startIcon={<Add />} onClick={addCategory} variant="outlined">Add Category</Button> */}
 
         {isNew ?  
         <Button variant="contained" onClick={(event) => handleSubmit(event)}>Add Expense</Button> :

@@ -42,7 +42,7 @@ const ExpenseList = () => {
   }
 
   return (
-    <Box sx={{ maxWidth: 900, m: 'auto', mt: 5 }}>
+    <Box sx={{ maxWidth: 1000, m: 'auto', mt: 5 }}>
         <TableContainer component={Paper}>
         <Table>
             <TableHead>
