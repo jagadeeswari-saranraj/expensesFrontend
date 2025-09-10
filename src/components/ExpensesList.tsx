@@ -128,7 +128,7 @@ const ExpenseList = () => {
 
   return (
     <Box sx={{ maxWidth: 1000, m: 'auto', mt: 5 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2, gap: 2 }}>
             <Button color="primary" variant="outlined" onClick={() => exportToCSV(expenses)}>
                 Export CSV
             </Button>
