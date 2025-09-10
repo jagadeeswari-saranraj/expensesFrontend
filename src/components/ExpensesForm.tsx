@@ -12,7 +12,7 @@ const ExpenseForm = () => {
   const [description, setDescription] = useState('');
   const [total, setTotal] = useState(0);
   const [date, setDate] = useState('');
-  const [byCategory, setByCategory] = useState<Record<string, number>>({});
+  const [byCategory, setByCategory] = useState<Record<string, number>>({ '': 0});
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
@@ -90,11 +90,11 @@ const ExpenseForm = () => {
   };
 
   return (
-    <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2, maxWidth: 400, m: 'auto', mt: 5 }}>
+    <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2, maxWidth: 600, m: 'auto', mt: 5 }}>
         <TextField label="User" value={user} onChange={(e) => setUser(e.target.value)} required />
         <TextField label="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
         <TextField type="number" label="Total" value={total} InputProps={{ readOnly: true }} />
-        <TextField type="date" label="Date" value={date} onChange={(e) => setDate(e.target.value)} required />
+        <TextField type="date" label="Date" value={date} onChange={(e) => setDate(e.target.value)} required InputLabelProps={{shrink: true}} />
         <Typography variant="h6">Categories</Typography>
         {Object.entries(byCategory).map(([type, amount], index) => (
             <Box key={index} sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
