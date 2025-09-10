@@ -51,8 +51,7 @@ const ExpenseForm = () => {
     navigate('/');
   };
 
-  const handleUpdate = (e: any) => {
-    e.preventDefault();
+  const handleUpdate = () => {
     if (!id) return;
 
     dispatch(
@@ -123,7 +122,7 @@ const ExpenseForm = () => {
 
         {isNew ?  
         <Button variant="contained" onClick={(event) => handleSubmit(event)}>Add Expense</Button> :
-            <Button variant="contained" onClick={(event) => handleUpdate(event)}>update Expense</Button>
+            <Button variant="contained" onClick={handleUpdate}>update Expense</Button>
         }
     </Box>
   );
